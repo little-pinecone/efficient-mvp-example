@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<jacoco.version>0.8.6</jacoco.version>
+		<sonar.projectKey>little-pinecone_efficient-mvp-example</sonar.projectKey>
 	</properties>
 
 	<dependencies>
@@ -55,6 +56,14 @@
 	</build>
 
 	<profiles>
+		<profile>
+			<id>sonar-cloud</id>
+			<properties>
+				<sonar.organization>keep-growing</sonar.organization>
+				<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+			</properties>
+		</profile>
+
 		<!-- Code coverage report generation -->
 		<profile>
 			<id>code-coverage</id>
