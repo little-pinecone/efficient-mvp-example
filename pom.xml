@@ -20,6 +20,8 @@
 		<sonar.projectKey>little-pinecone_efficient-mvp-example</sonar.projectKey>
 		<modelmapper.version>2.3.9</modelmapper.version>
 		<springdoc.version>1.5.2</springdoc.version>
+		<dummy4j.version>0.6.0</dummy4j.version>
+		<testcontainers.version>1.15.1</testcontainers.version>
 	</properties>
 
 	<dependencies>
@@ -55,6 +57,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${testcontainers.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>${testcontainers.version}</version>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- END of Testing -->
 
 		<!-- Documentation -->
@@ -85,6 +100,11 @@
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
 			<version>${modelmapper.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>dev.codesoapbox</groupId>
+			<artifactId>dummy4j</artifactId>
+			<version>${dummy4j.version}</version>
 		</dependency>
 		<!-- END of Utilities -->
 	</dependencies>
@@ -150,6 +170,10 @@
 								</goals>
 							</execution>
 						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
 					</plugin>
 				</plugins>
 			</build>

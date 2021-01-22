@@ -30,10 +30,10 @@ class BookControllerTest {
     private static final String PATH = "/" + ApiControllerPaths.API + BookControllerPaths.BOOKS;
 
     @Autowired
-    protected MockMvc mvc;
+    private MockMvc mvc;
 
     @Autowired
-    protected ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
     @Autowired
     private BookController controller;

@@ -37,6 +37,7 @@ $ mvn clean install
 * `dev` - required for a development environment
 * `dbschema` - [saves Hibernate DDL schema](https://keepgrowing.in/tools/save-hibernate-ddl-schema-to-a-file/)
   to `schema.sql` file
+* `init` - enables data initialization
 
 ## Database
 
@@ -58,6 +59,15 @@ $ docker-compose up -d
 * [Migrations are executed by Flyway](https://keepgrowing.in/java/springboot/add-flyway-migrations-to-your-spring-boot-project/)
   and run automatically on the application startup.
 
+### Initializing database
+
+1. Run application with profile `init`.
+2. Perform a `GET` request to the `http://localhost:8080/api/init` endpoint. Application initializes database with fake
+   random values and returns the `seed` used for random data generation.
+3. You can pass the `seed` as a request parameter, e.g. `http://localhost:8080/api/init?seed=9876` to get the same
+   values.
+4. Every initialization clears the database and restarts indexes before generating new records.
+
 ### Dropping database
 
 To create the database from scratch run the following commands in the project directory:
@@ -72,8 +82,9 @@ When the application is started again, the migrations are applied on an empty db
 
 ## API documentation
 
-* The Swagger UI page: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) 
-* The OpenAPI description is available at the following url for json format: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
+* The Swagger UI page: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+* The OpenAPI description is available at the following url for json
+  format: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
 
 ## Code analysis
 
@@ -105,3 +116,5 @@ $ mvn test -Dspring.profiles.active=dev
 * [PostgreSQL](https://www.postgresql.org/)
 * [Docker Compose](https://docs.docker.com/compose/)
 * [springdoc-openapi](https://springdoc.org/)
+* [Dummy4j](https://daniel-frak.github.io/dummy4j/)
+* [Testcontainers](https://www.testcontainers.org/)
