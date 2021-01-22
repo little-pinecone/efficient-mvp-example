@@ -105,7 +105,7 @@
 				<jacoco.skip>false</jacoco.skip>
 				<maven.test.skip>false</maven.test.skip>
 				<skip.unit.tests>false</skip.unit.tests>
-				<sonar.exclusions>**/EfficientMvpExampleApplication.java</sonar.exclusions>
+				<sonar.exclusions>**/EfficientMvpExampleApplication.java,**/**Config.java</sonar.exclusions>
 			</properties>
 			<build>
 				<plugins>
