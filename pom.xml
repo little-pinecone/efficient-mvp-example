@@ -19,6 +19,7 @@
 		<jacoco.version>0.8.6</jacoco.version>
 		<sonar.projectKey>little-pinecone_efficient-mvp-example</sonar.projectKey>
 		<modelmapper.version>2.3.9</modelmapper.version>
+		<springdoc.version>1.5.2</springdoc.version>
 	</properties>
 
 	<dependencies>
@@ -56,6 +57,24 @@
 		</dependency>
 		<!-- END of Testing -->
 
+		<!-- Documentation -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>${springdoc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-data-rest</artifactId>
+			<version>${springdoc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!-- END of Documentation -->
+
 		<!-- Utilities -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -80,6 +99,10 @@
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+						</exclude>
+						<exclude>
+							<groupId>org.springframework.boot</groupId>
+							<artifactId>spring-boot-configuration-processor</artifactId>
 						</exclude>
 					</excludes>
 				</configuration>

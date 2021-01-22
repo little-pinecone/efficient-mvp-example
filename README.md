@@ -70,6 +70,11 @@ $ docker-compose up -d
 
 When the application is started again, the migrations are applied on an empty db.
 
+## API documentation
+
+* The Swagger UI page: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) 
+* The OpenAPI description is available at the following url for json format: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
+
 ## Code analysis
 
 If you want to generate a SonarQube report locally:
@@ -99,3 +104,4 @@ $ mvn test -Dspring.profiles.active=dev
 * [Flyway](https://flywaydb.org/)
 * [PostgreSQL](https://www.postgresql.org/)
 * [Docker Compose](https://docs.docker.com/compose/)
+* [springdoc-openapi](https://springdoc.org/)
