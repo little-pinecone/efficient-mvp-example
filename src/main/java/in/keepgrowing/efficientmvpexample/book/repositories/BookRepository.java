@@ -6,7 +6,13 @@ import java.util.Optional;
 
 public class BookRepository {
 
+    private final BookSpringRepository bookSpringRepository;
+
+    public BookRepository(BookSpringRepository bookSpringRepository) {
+        this.bookSpringRepository = bookSpringRepository;
+    }
+
     public Optional<Book> findById(Long bookId) {
-        return Optional.of(new Book());
+        return bookSpringRepository.findById(bookId);
     }
 }
