@@ -28,7 +28,8 @@ public class DataInitController {
     @Operation(summary = "Generates random data and saves it in db")
     @GetMapping
     public ResponseEntity<Long> init(
-            @RequestParam(value = "seed", required = false, defaultValue = "987") Long seed) {
-        return ResponseEntity.ok(dataInitializer.init(seed));
+            @RequestParam(value = "seed", required = false, defaultValue = "987") Long seed,
+            @RequestParam(value = "how-many-books", required = false, defaultValue = "20") Integer howManyBooks) {
+        return ResponseEntity.ok(dataInitializer.init(seed, howManyBooks));
     }
 }

@@ -12,11 +12,11 @@ public class DataInitializer {
         this.bookInitializer = bookInitializer;
     }
 
-    public Long init(Long seed) {
+    public Long init(Long seed, Integer howManyBooks) {
         var dummy = new CustomDummy(seed, null, null);
 
         bookInitializer.resetTable();
-        bookInitializer.init(dummy, 20);
+        bookInitializer.init(dummy, howManyBooks);
 
         return dummy.getSeed();
     }

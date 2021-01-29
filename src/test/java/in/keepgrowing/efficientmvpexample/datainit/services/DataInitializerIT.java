@@ -41,15 +41,15 @@ class DataInitializerIT {
 
     @Test
     void shouldInitData() {
-        dataInitializer.init(1L);
+        dataInitializer.init(1L, 1);
 
-        assertEquals(20, bookRepository.findAll().size());
+        assertEquals(1, bookRepository.findAll().size());
     }
 
     @Test
     void shouldRestartDatabaseSequences() {
-        dataInitializer.init(1L);
-        dataInitializer.init(1L);
+        dataInitializer.init(1L, 1);
+        dataInitializer.init(1L, 1);
 
         assertTrue(bookRepository.findById(1L).isPresent());
     }

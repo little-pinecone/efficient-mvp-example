@@ -44,12 +44,12 @@ class DataInitControllerTest {
 
     @Test
     void shouldRunDatabaseInit() throws Exception {
-        when(dataInitializer.init(123L))
+        when(dataInitializer.init(123L, 10))
                 .thenReturn(123L);
 
         var expectedResponse = objectMapper.writeValueAsString(123L);
 
-        mvc.perform(get(PATH + "?seed=123")
+        mvc.perform(get(PATH + "?seed=123&how-many-books=10")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().json(expectedResponse));
