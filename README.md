@@ -37,6 +37,7 @@ $ mvn clean install
 * `dev` - required for a development environment
 * `dbschema` - [saves Hibernate DDL schema](https://keepgrowing.in/tools/save-hibernate-ddl-schema-to-a-file/)
   to `schema.sql` file
+* `init` - enables data initialization
 
 ## Database
 
@@ -57,6 +58,15 @@ $ docker-compose up -d
 
 * [Migrations are executed by Flyway](https://keepgrowing.in/java/springboot/add-flyway-migrations-to-your-spring-boot-project/)
   and run automatically on the application startup.
+
+### Initializing database
+
+1. Run application with profile `init`.
+2. Perform a `GET` request to the `http://localhost:8080/api/init` endpoint. Application initializes database with fake
+   random values and returns the `seed` used for random data generation.
+3. You can pass the `seed` as a request parameter, e.g. `http://localhost:8080/api/init?seed=9876` to get the same
+   values.
+4. Every initialization clears the database and restarts indexes before generating new records.
 
 ### Dropping database
 
