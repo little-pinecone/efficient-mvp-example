@@ -72,8 +72,9 @@ When the application is started again, the migrations are applied on an empty db
 
 ## API documentation
 
-* The Swagger UI page: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) 
-* The OpenAPI description is available at the following url for json format: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
+* The Swagger UI page: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+* The OpenAPI description is available at the following url for json
+  format: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
 
 ## Code analysis
 
@@ -105,3 +106,5 @@ $ mvn test -Dspring.profiles.active=dev
 * [PostgreSQL](https://www.postgresql.org/)
 * [Docker Compose](https://docs.docker.com/compose/)
 * [springdoc-openapi](https://springdoc.org/)
+* [Dummy4j](https://daniel-frak.github.io/dummy4j/)
+* [Testcontainers](https://www.testcontainers.org/)

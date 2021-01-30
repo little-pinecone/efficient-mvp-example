@@ -1,5 +1,6 @@
 package in.keepgrowing.efficientmvpexample.shared.config;
 
+import in.keepgrowing.efficientmvpexample.book.init.BookGenerator;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,5 +11,10 @@ public class BeanConfig {
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
+    }
+
+    @Bean
+    public BookGenerator bookGenerator() {
+        return new BookGenerator();
     }
 }
