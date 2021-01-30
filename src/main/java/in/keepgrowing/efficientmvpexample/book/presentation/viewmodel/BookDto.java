@@ -1,15 +1,16 @@
 package in.keepgrowing.efficientmvpexample.book.presentation.viewmodel;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@EqualsAndHashCode
-@ToString
+@Data
 @Schema(name = "Book")
 public class BookDto {
 
+    private Long id;
     private String title;
 }
