@@ -34,7 +34,7 @@ $ mvn clean install
 
 ### Profiles
 
-* `dev` - required for a development environment
+* `dev` - required for a development environment for establishing a database connection
 * `dbschema` - [saves Hibernate DDL schema](https://keepgrowing.in/tools/save-hibernate-ddl-schema-to-a-file/)
   to `schema.sql` file
 * `init` - enables data initialization
@@ -102,10 +102,16 @@ $ mvn clean verify sonar:sonar -Pcode-coverage -Dspring.profiles.active=dev
 
 ## Running tests
 
-Run all tests with the following command in the project directory:
+Run unit tests with the following command in the project directory:
 
 ```bash
 $ mvn test -Dspring.profiles.active=dev
+```
+
+Run all tests with the following command in the project directory:
+
+```bash
+$ mvn verify
 ```
 
 ## Built With

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.1</version>
+		<version>2.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>in.keepgrowing</groupId>
@@ -15,13 +15,13 @@
 	<description>An example project for presenting efficient MVP design</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>13</java.version>
 		<jacoco.version>0.8.6</jacoco.version>
 		<sonar.projectKey>little-pinecone_efficient-mvp-example</sonar.projectKey>
-		<modelmapper.version>2.3.9</modelmapper.version>
-		<springdoc.version>1.5.2</springdoc.version>
+		<modelmapper.version>2.4.1</modelmapper.version>
+		<springdoc.version>1.5.8</springdoc.version>
 		<dummy4j.version>0.6.0</dummy4j.version>
-		<testcontainers.version>1.15.1</testcontainers.version>
+		<testcontainers.version>1.15.3</testcontainers.version>
 	</properties>
 
 	<dependencies>
@@ -38,8 +38,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<version>RELEASE</version>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -127,6 +125,10 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -170,10 +172,6 @@
 								</goals>
 							</execution>
 						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-failsafe-plugin</artifactId>
 					</plugin>
 				</plugins>
 			</build>
