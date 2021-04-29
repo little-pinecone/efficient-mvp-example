@@ -12,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Optional;
@@ -50,6 +51,7 @@ class BookControllerTest {
     }
 
     @Test
+    @WithMockUser
     void shouldGetBook() throws Exception {
         var book = mock(Book.class);
         when(bookRepository.findById(1L))
@@ -68,6 +70,7 @@ class BookControllerTest {
     }
 
     @Test
+    @WithMockUser
     void shouldReturnStatusNotFound() throws Exception {
         when(bookRepository.findById(1L))
                 .thenReturn(Optional.empty());
