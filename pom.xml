@@ -99,6 +99,13 @@
 		</dependency>
 		<!-- END of Documentation -->
 
+		<!-- Monitoring -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- END of Monitoring -->
+
 		<!-- Utilities -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
