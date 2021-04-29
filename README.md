@@ -34,7 +34,7 @@ $ mvn clean install
 
 ### Profiles
 
-* `dev` - required for a development environment for establishing a database connection
+* `dev` - required for a development environment for establishing a database connection, default credentials, etc.
 * `dbschema` - [saves Hibernate DDL schema](https://keepgrowing.in/tools/save-hibernate-ddl-schema-to-a-file/)
   to `schema.sql` file
 * `init` - enables data initialization
@@ -85,6 +85,7 @@ When the application is started again, the migrations are applied on an empty db
 * The Swagger UI page: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 * The OpenAPI description is available at the following url for json
   format: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
+* The Postman collection for this project: [postman_collection.json](postman/efficient-mvp-example.postman_collection.json)  
 
 ## Code analysis
 
