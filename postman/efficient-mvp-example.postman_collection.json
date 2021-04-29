@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "33227072-7a7f-4f60-a123-35950e8f6f3c",
+		"name": "efficient-mvp-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "books: find by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.be.ok;",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"    pm.expect(pm.response.text()).to.include(\"title\");",
+							"});",
+							"",
+							"// let template = `",
+							"//     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\"",
+							"//         crossorigin=\"anonymous\">",
+							"//     <style type=\"text/css\">",
+							"//         body { font-size: 12px; background: #eee; padding: 16px;}",
+							"//         .card { border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,.15); -webkit-box-shadow: 0 4px 10px rgba(0,0,0,.15); -moz-box-shadow: 0 4px 10px rgba(0,0,0,.15);}",
+							"//         .card-topper { border-top-right-radius: 8px; border-top-left-radius: 8px; padding: 8px 16px; font-size: 12px; font-weight: 600; text-transform: uppercase;}",
+							"//         .card-topper.micro { background-color: #173F5F; color: #ffffff;}",
+							"//         .card-topper.planning { background-color: #ED553B; color: #ffffff;}",
+							"//         .card-topper.large { background-color: #ED553B; color: #ffffff;}",
+							"//         .card-topper.brewpub { background-color: #20639B; color: #ffffff;}",
+							"//         .card-topper.regional { background-color: #F6D55C;}",
+							"//         .card-topper.contract { background-color: #3CAEA3; color: #ffffff;}",
+							"//         .card-topper.proprietor { background-color: #ED553B; color: #ffffff;}",
+							"//         .card-topper.bar { background-color: #ED553B; color: #ffffff;}",
+							"//     </style>",
+							"//     <div class=\"container-fluid\">",
+							"//         <div class=\"row\">",
+							"//             <div class=\"col mb-4\">",
+							"//                 <h1>{{title}}</h1>",
+							"//             </div>",
+							"//         </div>",
+							"//         <div class=\"row\">",
+							"//             {{#each response}}",
+							"//             <div class=\"col-sm-6 col-lg-4 col-xl-3 mb-5\">",
+							"//                 <div class=\"card\">",
+							"//                     <div class=\"test card-topper card-img-top {{brewery_type}}\">{{brewery_type}}</div>",
+							"//                     <div class=\"card-body\">",
+							"//                         <h2>{{title}}</h2>",
+							"//                     </div>",
+							"//                 </div>",
+							"//             </div>",
+							"//             {{/each}}",
+							"//         </div>",
+							"//     </div>",
+							"// `;",
+							"",
+							"// pm.visualizer.set(template, {",
+							"//     response: JSON.parse(responseBody)",
+							"// });",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "open api definition",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v3/api-docs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v3",
+						"api-docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "init data",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/init?seed=1&how-many-books=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"init"
+					],
+					"query": [
+						{
+							"key": "seed",
+							"value": "1"
+						},
+						{
+							"key": "how-many-books",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
