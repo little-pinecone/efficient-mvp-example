@@ -32,6 +32,14 @@ You can build the application with:
 $ mvn clean install
 ```
 
+### Spring security
+
+The application uses [Spring Boot security starter](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security).
+The default credentials are specified in the [application-dev.properties](src/main/resources/application-dev.properties) file:
+
+* `useranme` admin
+* `password` admin
+
 ### Profiles
 
 * `dev` - required for a development environment for establishing a database connection, default credentials, etc.
