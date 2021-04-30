@@ -1,5 +1,18 @@
 version: "3.3"
 services:
+  app:
+    build:
+      context: ./
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DATASOURCE_URL=${DATASOURCE_URL}
+    ports:
+      - "8080:8080"
+    networks:
+      - internal
+    depends_on:
+      - postgres
+
   postgres:
     image: "postgres:${POSTGRES_VERSION}"
     ports:
@@ -10,5 +23,27 @@ services:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
+    networks:
+      - internal
+
+  prometheus:
+    image: prom/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus:/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - internal
+    depends_on:
+      - app
+
 volumes:
   postgres:
+  prometheus:
+
+networks:
+  internal:

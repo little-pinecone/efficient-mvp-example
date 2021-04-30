@@ -53,7 +53,7 @@ To [run the postgres database locally](https://keepgrowing.in/tools/set-up-a-pos
 attached `docker-compose.yml` file and run:
 
 ```
-$ docker-compose up -d
+$ docker-compose up -d postgres
 ```
 
 [Database configuration](https://keepgrowing.in/java/springboot/add-a-postgresql-database-to-your-spring-boot-project/):
@@ -94,6 +94,16 @@ When the application is started again, the migrations are applied on an empty db
 * The OpenAPI description is available at the following url for json
   format: [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
 * The Postman collection for this project: [postman_collection.json](postman/efficient-mvp-example.postman_collection.json)  
+
+## Monitoring
+
+### Actuator
+
+* Actuator endpoints: [http://localhost:8080/actuator](http://localhost:8080/actuator)
+  
+### Prometheus
+* Run both the application and the Prometheus server with Docker using the following command: `$ docker-compose up -d app prometheus`
+* Prometheus targets: [http://localhost:9090/targets](http://localhost:9090/targets)
 
 ## Code analysis
 
