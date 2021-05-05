@@ -97,6 +97,8 @@ When the application is started again, the migrations are applied on an empty db
 
 ## Monitoring
 
+The default credentials are specified in the [Spring security](#spring-security) section.
+
 ### Actuator
 
 * Actuator endpoints: [http://localhost:8080/actuator](http://localhost:8080/actuator)
@@ -104,6 +106,12 @@ When the application is started again, the migrations are applied on an empty db
 ### Prometheus
 * Run both the application and the Prometheus server with Docker using the following command: `$ docker-compose up -d app prometheus`
 * Prometheus targets: [http://localhost:9090/targets](http://localhost:9090/targets)
+
+### Grafana
+* Make sure that the `prometheus` and `app` services are running in Docker.
+* Start the `grafana` service using the following command: `$ docker-compose up -d grafana`.
+* Grafana dashboards: [http://localhost:3000/dashboards](http://localhost:3000/dashboards), the JVM(Micrometer) dashboard should be available by default.
+* Grafana datasources: [http://localhost:3000/datasources](http://localhost:3000/datasources), the Prometheus datasource should be available by default.
 
 ## Code analysis
 

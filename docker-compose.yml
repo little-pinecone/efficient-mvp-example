@@ -41,9 +41,26 @@ services:
     depends_on:
       - app
 
+  grafana:
+    image: grafana/grafana:$GRAFANA_VERSION
+    environment:
+      GF_SECURITY_ADMIN_USER: $GRAFANA_ADMIN_USER
+      GF_SECURITY_ADMIN_PASSWORD: $GRAFANA_ADMIN_PASSWORD
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+    depends_on:
+      - prometheus
+    networks:
+      - internal
+
 volumes:
   postgres:
   prometheus:
+  grafana-storage:
 
 networks:
   internal:
