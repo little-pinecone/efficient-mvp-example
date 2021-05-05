@@ -5,3 +5,9 @@ datasources:
     type: prometheus
     access: proxy
     url: prometheus:9090
+  - name: Loki
+    type: loki
+    access: proxy
+    url: loki:3100
+    jsonData:
+      maxLines: 1000
