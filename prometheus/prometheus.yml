@@ -5,7 +5,7 @@ scrape_configs:
   - job_name: 'spring-boot-app'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['app:8080']
+      - targets: [ 'app:8080' ]
     basic_auth:
       username: admin
       password: admin
