@@ -11,8 +11,7 @@ clients:
 scrape_configs:
   - job_name: app
     static_configs:
-      - targets:
-          - app
-        labels:
+      - labels:
           job: app
-          __path__: /var/log/*log
+          env: staging
+          __path__: /var/log/efficient-mvp-example/*log

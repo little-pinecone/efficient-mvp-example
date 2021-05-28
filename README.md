@@ -113,6 +113,15 @@ The default credentials are specified in the [Spring security](#spring-security)
 * Grafana dashboards: [http://localhost:3000/dashboards](http://localhost:3000/dashboards), the JVM(Micrometer) dashboard should be available by default.
 * Grafana datasources: [http://localhost:3000/datasources](http://localhost:3000/datasources), the Prometheus datasource should be available by default.
 
+### Logs
+
+Application logs are available through Grafana Explore: [http://localhost:3000/explore](http://localhost:3000/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Loki%22,%7B%7D%5D), the Loki datasource should be available by default.
+Example queries:
+  
+* search by process: `{job="app"}|="[http-nio-8080-exec-1]"`
+* count errors from the last 5 minutes: `count_over_time({job="app"} |= "ERROR" [5m])`
+* search by time`{job="app"} |~ "2021-05-28 13:07"`
+
 ## Code analysis
 
 If you want to generate a SonarQube report locally:
