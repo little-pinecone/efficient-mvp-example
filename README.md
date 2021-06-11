@@ -38,7 +38,7 @@ An example project for presenting efficient MVP design.
         * [Grafana](#working-with-app-monitoring-grafana)
         * [Logs](#working-with-app-monitoring-logs)
     * [Running tests](#working-with-app-running-tests)
-* [Code analysis](#code-analysis)
+* [SonarQube analysis](#sonar-analysis)
 * [Building artifacts for deployment](#deployment)
 
 
@@ -241,8 +241,8 @@ Run all tests with the following command in the project directory:
 mvn verify
 ```
 
-<a name="code-analysis"></a>
-# Code analysis
+<a name="sonar-analysis"></a>
+# SonarQube analysis
 
 This section describes how to generate a [SonarQube report locally]((https://keepgrowing.in/tools/boost-project-quality-with-sonarqube-local-code-analysis/)).
 
