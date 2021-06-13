@@ -11,6 +11,17 @@
 	<name>backend</name>
 	<description>The backend module built with Spring Boot</description>
 
+	<properties>
+		<java.version>13</java.version>
+		<jacoco.version>0.8.6</jacoco.version>
+		<sonar.projectKey>little-pinecone_efficient-mvp-example</sonar.projectKey>
+		<modelmapper.version>2.4.1</modelmapper.version>
+		<springdoc.version>1.5.8</springdoc.version>
+		<dummy4j.version>0.7.3</dummy4j.version>
+		<testcontainers.version>1.15.3</testcontainers.version>
+		<openapi-generator.version>5.1.0</openapi-generator.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -208,6 +219,90 @@
 					</plugin>
 				</plugins>
 			</reporting>
+		</profile>
+
+		<profile>
+			<id>angular</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>build-helper-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>reserve-tomcat-port</id>
+								<goals>
+									<goal>reserve-network-port</goal>
+								</goals>
+								<phase>process-resources</phase>
+								<configuration>
+									<portNames>
+										<portName>tomcat.http.port</portName>
+									</portNames>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>pre-integration-test</id>
+								<goals>
+									<goal>start</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>post-integration-test</id>
+								<goals>
+									<goal>stop</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<profiles>
+								<profile>dev</profile>
+							</profiles>
+							<arguments>
+								<argument>--server.port=${tomcat.http.port}</argument>
+							</arguments>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.openapitools</groupId>
+						<artifactId>openapi-generator-maven-plugin</artifactId>
+						<version>${openapi-generator.version}</version>
+						<executions>
+							<execution>
+								<id>angular-client-code-generation</id>
+								<phase>integration-test</phase>
+								<goals>
+									<goal>generate</goal>
+								</goals>
+								<configuration>
+									<inputSpec>http://localhost:${tomcat.http.port}/v3/api-docs</inputSpec>
+									<!-- TODO Fix Authorization: -->
+									<auth>Authorization: Basic YWRtaW46YWRtaW4=</auth>
+									<output>${project.build.directory}/../../frontend/src/main/angular/src/backend</output>
+									<generatorName>typescript-angular</generatorName>
+									<!--
+                                        Use this option to dump the configuration help for the specified generator
+                                        instead of generating sources:
+                                        <configHelp>true</configHelp>
+                                    -->
+									<configOptions>
+										<!--
+                                            Put generator-specific parameters here, e.g. for typescript-angular:
+                                            <apiModulePrefix>Backend</apiModulePrefix>
+                                         -->
+									</configOptions>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
 		</profile>
 	</profiles>
 
