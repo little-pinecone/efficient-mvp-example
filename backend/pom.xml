@@ -6,7 +6,6 @@
 		<groupId>in.keepgrowing</groupId>
 		<artifactId>efficient-mvp-example</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<artifactId>backend</artifactId>
 	<name>backend</name>
@@ -28,6 +27,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>in.keepgrowing</groupId>
+			<artifactId>frontend</artifactId>
+			<version>${project.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<!-- Security -->
