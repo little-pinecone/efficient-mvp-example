@@ -232,7 +232,7 @@ Example queries:
 Run unit tests with the following command in the project directory:
 
 ```shell
-mvn test -Dspring.profiles.active=dev
+mvn test
 ```
 
 Run all tests with the following command in the project directory:
