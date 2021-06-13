@@ -115,7 +115,7 @@ docker-compose up -d
 
 or run the bash script attached to the project:
 ```shell
-./ docker-dev.sh
+./docker-dev.sh
 ```
 
 #### Shutting down
@@ -171,7 +171,7 @@ docker-compose up -d postgres
 
 or run the bash script attached to the project:
 ```shell
-./ docker-rebuild-db.sh
+./docker-rebuild-db.sh
 ```
 
 When the application is started again, the migrations are applied on the empty db.
@@ -195,7 +195,7 @@ docker-compose -f docker-compose-minimal.yml -f docker-compose-app.yml -f docker
 
 or run the bash script attached to the project:
 ```shell
-./ docker-staging.sh
+./docker-staging.sh
 ```
 
 That means that **you can't monitor a project run from IntelliJ (not through Docker)**.
@@ -250,14 +250,16 @@ Default SonarQube credentials:
 * user: `admin`
 * password: `admin`
 
+Once the SonarQube is running, log in and **change the password**. You'll need to use your sonar credentials when runnig the command listed below.
+    
 To generate the report:
 
 * Make sure to run services defined in the `docker-compose-dev.yml` file.
-* Visit the SonarQube instance that is running on your local machine: [http://localhost:9000](http://localhost:9000) and set up new credentials (at least a new password).
+* Visit the SonarQube instance that is running on your local machine: [http://localhost:9000](http://localhost:9000) and set up a new password.
 * Run the following command in the project directory:
 
 ```shell
-mvn clean verify sonar:sonar -Pcode-coverage -Dspring.profiles.active=dev -Dsonar.login=yourloginid -Dsonar.password=yourpassword
+mvn clean verify sonar:sonar -Pcode-coverage -Dspring.profiles.active=dev -Dsonar.login=admin -Dsonar.password=yourpassword
 ```
 
 * Visit the [Projects](http://localhost:9000/projects) page and choose the project.
