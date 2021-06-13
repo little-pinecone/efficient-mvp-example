@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.5</version>
+		<version>2.5.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>in.keepgrowing</groupId>
@@ -20,7 +20,7 @@
 		<sonar.projectKey>little-pinecone_efficient-mvp-example</sonar.projectKey>
 		<modelmapper.version>2.4.1</modelmapper.version>
 		<springdoc.version>1.5.8</springdoc.version>
-		<dummy4j.version>0.6.0</dummy4j.version>
+		<dummy4j.version>0.7.3</dummy4j.version>
 		<testcontainers.version>1.15.3</testcontainers.version>
 	</properties>
 
@@ -32,6 +32,14 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<!-- Dependency for removing IntelliJ warning -->
+		<!-- https://youtrack.jetbrains.com/issue/IDEA-225445 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
 		</dependency>
 
 		<!-- Security -->
@@ -93,11 +101,22 @@
 			<version>${springdoc.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<optional>true</optional>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-security</artifactId>
+			<version>${springdoc.version}</version>
 		</dependency>
 		<!-- END of Documentation -->
+
+		<!-- Monitoring -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+		<!-- END of Monitoring -->
 
 		<!-- Utilities -->
 		<dependency>

@@ -1,0 +1,23 @@
+version: "3.3"
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev,init,monitoring
+      - SPRING_DATASOURCE_URL=${DATASOURCE_URL}
+    ports:
+      - "8080:8080"
+    volumes:
+      - app-log:/var/log/efficient-mvp-example
+    networks:
+      - internal
+    depends_on:
+      - postgres
+
+networks:
+  internal:
+
+volumes:
+  app-log:

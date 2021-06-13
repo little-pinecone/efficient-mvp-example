@@ -1,0 +1,1 @@
+mvn clean verify sonar:sonar -Pcode-coverage -Dspring.profiles.active=dev -Dsonar.login=admin -Dsonar.password=admin

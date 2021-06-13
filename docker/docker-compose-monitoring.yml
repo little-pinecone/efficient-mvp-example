@@ -1,0 +1,62 @@
+version: '3.3'
+services:
+  prometheus:
+    image: prom/prometheus:$PROMETHEUS_VERSION
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus:/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - internal
+    depends_on:
+      - app
+
+  promtail:
+    image: grafana/promtail:$PROMTAIL_VERSION
+    volumes:
+      - ./promtail/promtail-local-config.yml:/etc/promtail/promtail-local-config.yml
+      - app-log:/var/log/efficient-mvp-example
+    command: -config.file=/etc/promtail/promtail-local-config.yml
+    networks:
+      - internal
+    depends_on:
+      - app
+
+  loki:
+    image: grafana/loki:$LOKI_VERSION
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - internal
+    depends_on:
+      - promtail
+
+  grafana:
+    image: grafana/grafana:$GRAFANA_VERSION
+    environment:
+      GF_SECURITY_ADMIN_USER: $GRAFANA_ADMIN_USER
+      GF_SECURITY_ADMIN_PASSWORD: $GRAFANA_ADMIN_PASSWORD
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+    networks:
+      - internal
+    depends_on:
+      - prometheus
+      - loki
+
+volumes:
+  prometheus:
+  grafana-storage:
+  app-log:
+
+networks:
+  internal:
