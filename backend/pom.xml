@@ -282,8 +282,6 @@
 								</goals>
 								<configuration>
 									<inputSpec>http://localhost:${tomcat.http.port}/v3/api-docs</inputSpec>
-									<!-- TODO Fix Authorization: -->
-									<auth>Authorization: Basic YWRtaW46YWRtaW4=</auth>
 									<output>${project.build.directory}/../../frontend/src/main/angular/src/backend</output>
 									<generatorName>typescript-angular</generatorName>
 									<!--
