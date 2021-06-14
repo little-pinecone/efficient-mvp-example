@@ -20,6 +20,7 @@
 		<dummy4j.version>0.7.3</dummy4j.version>
 		<testcontainers.version>1.15.3</testcontainers.version>
 		<openapi-generator.version>5.1.0</openapi-generator.version>
+		<maven.clean.version>3.1.0</maven.clean.version>
 	</properties>
 
 	<dependencies>
@@ -221,10 +222,24 @@
 			</reporting>
 		</profile>
 
+		<!--https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/-->
 		<profile>
 			<id>angular</id>
 			<build>
 				<plugins>
+					<plugin>
+						<!--https://maven.apache.org/plugins/maven-clean-plugin/examples/delete_additional_files.html-->
+						<artifactId>maven-clean-plugin</artifactId>
+						<version>${maven.clean.version}</version>
+						<configuration>
+							<filesets>
+								<fileset>
+									<directory>${project.build.directory}/../../frontend/src/main/angular/src/backend</directory>
+									<followSymlinks>false</followSymlinks>
+								</fileset>
+							</filesets>
+						</configuration>
+					</plugin>
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>build-helper-maven-plugin</artifactId>
