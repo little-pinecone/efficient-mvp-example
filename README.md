@@ -38,6 +38,7 @@ An example project for presenting efficient MVP design.
         * [Grafana](#working-with-app-monitoring-grafana)
         * [Logs](#working-with-app-monitoring-logs)
     * [Running tests](#working-with-app-running-tests)
+    * [Generating client code](#working-with-generate-client)
 * [SonarQube analysis](#sonar-analysis)
 * [Building artifacts for deployment](#deployment)
 
@@ -241,6 +242,7 @@ Run all tests with the following command in the project directory:
 mvn verify
 ```
 
+<a name="working-with-app-generate-client"></a>
 ## Generating client code
 
 To run client code generation using the `openapi-generator-maven-plugin` execute the follwing command:
