@@ -19,7 +19,7 @@
                 <version>1.9.1</version>
                 <configuration>
                     <workingDirectory>src/main/angular</workingDirectory>
-                    <nodeVersion>v16.3.0</nodeVersion>
+                    <nodeVersion>v14.17.1</nodeVersion>
                     <npmVersion>7.17.0</npmVersion>
                 </configuration>
                 <executions>
