@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "pre-sonar": "ng test --code-coverage --no-watch --source-map=false --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +35,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "karma-sonarqube-unit-reporter": "^0.0.23",
     "typescript": "~4.2.3"
   }
 }

@@ -14,7 +14,8 @@
 	<properties>
 		<java.version>13</java.version>
 		<jacoco.version>0.8.6</jacoco.version>
-		<sonar.projectKey>little-pinecone_efficient-mvp-example</sonar.projectKey>
+		<sonar.projectKey>little-pinecone_efficient-mvp-example-backend</sonar.projectKey>
+		<sonar.projectName>Efficient MVP example (backend)</sonar.projectName>
 		<modelmapper.version>2.4.1</modelmapper.version>
 		<springdoc.version>1.5.8</springdoc.version>
 		<dummy4j.version>0.7.3</dummy4j.version>
