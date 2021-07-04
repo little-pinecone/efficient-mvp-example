@@ -1,1 +1,0 @@
-mvn clean verify sonar:sonar -Pcode-coverage -Dsonar.login=admin -Dsonar.password=sonar

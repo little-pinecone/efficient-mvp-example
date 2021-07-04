@@ -31,7 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### Custom ###
-schema.sql
-run-sonar.sh

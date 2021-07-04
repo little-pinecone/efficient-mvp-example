@@ -38,6 +38,7 @@ An example project for presenting efficient MVP design.
         * [Grafana](#working-with-app-monitoring-grafana)
         * [Logs](#working-with-app-monitoring-logs)
     * [Running tests](#working-with-app-running-tests)
+    * [Generating client code](#working-with-generate-client)
 * [SonarQube analysis](#sonar-analysis)
 * [Building artifacts for deployment](#deployment)
 
@@ -240,6 +241,20 @@ Run all tests with the following command in the project directory:
 ```shell
 mvn verify
 ```
+
+<a name="working-with-app-generate-client"></a>
+## Generating client code
+
+To run client code generation using the `openapi-generator-maven-plugin` execute the follwing command:
+
+```shell
+mvn clean verify -Pangular -DskipTests
+```
+
+The application will be started so that API specification can be obtained from the open api endpoint. 
+Therefore, the maven configuration for the `angular` profile starts the application with the profile `dev` and requires a connection to the db.
+
+The generated code is available in the `frontend/src/main/angular/src/backend` directory. Don't edit files in this directory manually.
 
 <a name="sonar-analysis"></a>
 # SonarQube analysis
