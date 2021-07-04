@@ -3,7 +3,7 @@ import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
 import { BooksService } from './api/books.service';
-import { LandingPageService } from './api/landingPage.service';
+import { HomePageService } from './api/homePage.service';
 
 @NgModule({
   imports:      [],

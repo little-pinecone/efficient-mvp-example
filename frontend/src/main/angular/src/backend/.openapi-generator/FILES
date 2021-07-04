@@ -3,11 +3,12 @@ README.md
 api.module.ts
 api/api.ts
 api/books.service.ts
-api/landingPage.service.ts
+api/homePage.service.ts
 configuration.ts
 encoder.ts
 git_push.sh
 index.ts
 model/book.ts
+model/home.ts
 model/models.ts
 variables.ts

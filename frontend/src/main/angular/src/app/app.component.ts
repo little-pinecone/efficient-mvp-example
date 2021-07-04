@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {LandingPageService} from "../backend";
+import {Home, HomePageService} from "../backend";
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,12 @@ import {LandingPageService} from "../backend";
 })
 export class AppComponent implements OnInit {
   title = 'angular';
+  homeTest?: Home
 
-  constructor(private readonly landingPageService: LandingPageService) {
+  constructor(private readonly homePageService: HomePageService) {
   }
 
   ngOnInit(): void {
-    this.landingPageService.getLandingPageData().subscribe(d => this.title = d);
+    this.homePageService.getHomePageData().subscribe(d => this.homeTest = d);
   }
 }

@@ -1,11 +1,13 @@
-package in.keepgrowing.efficientmvpexample.landingpage.presentation.controllers;
+package in.keepgrowing.efficientmvpexample.homepage.presentation.controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import in.keepgrowing.efficientmvpexample.homepage.presentation.viewmodel.HomePageDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -15,6 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @AutoConfigureMockMvc
 @WebMvcTest(value = HomePageController.class)
+@ActiveProfiles({"dev"})
 class HomePageControllerTest {
 
     @Autowired
@@ -23,17 +26,21 @@ class HomePageControllerTest {
     @Autowired
     private HomePageController controller;
 
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @Test
     void contextLoads() {
         assertNotNull(controller);
     }
 
     @Test
-    @WithMockUser
     void shouldGetTestData() throws Exception {
-        mvc.perform(get("/home")
+        var expected = new HomePageDto("Home page body provided by the backend module");
+
+        mvc.perform(get("/api/home")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Home page works!"));
+                .andExpect(content().json(objectMapper.writeValueAsString(expected)));
     }
 }
