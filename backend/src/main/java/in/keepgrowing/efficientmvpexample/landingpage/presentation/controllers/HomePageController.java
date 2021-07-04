@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/landing", produces = MediaType.APPLICATION_JSON_VALUE)
-@Tag(name = "Landing page")
-public class LandingPageController {
+@RequestMapping(value = "/home", produces = MediaType.APPLICATION_JSON_VALUE)
+@Tag(name = "Home page")
+public class HomePageController {
 
     @GetMapping
-    @Operation(summary = "Get test data for landing page")
-    public String getLandingPageData() {
-        return "Landing page works!";
+    @Operation(summary = "Get test data for home page")
+    public String getHomePageData() {
+        return "Home page works!";
     }
 }

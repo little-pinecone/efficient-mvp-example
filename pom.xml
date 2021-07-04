@@ -11,19 +11,19 @@
 	<groupId>in.keepgrowing</groupId>
 	<artifactId>efficient-mvp-example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>efficient-mvp-example</name>
 	<description>An example project for presenting efficient MVP design</description>
-	<packaging>pom</packaging>
+
+	<modules>
+		<module>backend</module>
+		<module>frontend</module>
+	</modules>
 
 	<properties>
 		<sonar.projectKey>little-pinecone_efficient-mvp-example</sonar.projectKey>
 		<sonar.projectName>Efficient MVP example</sonar.projectName>
 		<sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
 	</properties>
-
-	<modules>
-		<module>backend</module>
-		<module>frontend</module>
-	</modules>
 
 </project>
