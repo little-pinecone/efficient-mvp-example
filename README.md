@@ -254,10 +254,7 @@ mvn clean verify -Pangular -DskipTests
 The application will be started so that API specification can be obtained from the open api endpoint. 
 Therefore, the maven configuration for the `angular` profile starts the application with the profile `dev` and requires a connection to the db.
 
-Remember to add the spring active profile if the pom file changes:
-```shell
-mvn clean verify -Pangular -Dspring.profiles.active=dev -DskipTests
-```
+The generated code is available in the `frontend/src/main/angular/src/backend` directory. Don't edit files in this directory manually.
 
 <a name="sonar-analysis"></a>
 # SonarQube analysis
