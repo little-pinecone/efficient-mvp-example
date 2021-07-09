@@ -256,6 +256,15 @@ Therefore, the maven configuration for the `angular` profile starts the applicat
 
 The generated code is available in the `frontend/src/main/angular/src/backend` directory. Don't edit files in this directory manually.
 
+In case getting the "port already taken" situation:
+ ```shell
+lsof -t -i :port_number
+```
+
+```shell
+sudo kill -9 process_number
+```
+
 <a name="sonar-analysis"></a>
 # SonarQube analysis
 
