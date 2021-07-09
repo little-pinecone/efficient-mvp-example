@@ -1,0 +1,4 @@
+title: efficient-mvp-example
+description: An example project for presenting efficient MVP design.
+remote_theme: pmarsceill/just-the-docs
+markdown: kramdown
