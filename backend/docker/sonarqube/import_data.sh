@@ -8,6 +8,10 @@ SONAR_DEFAULT_PROFILE_URL="$SONAR_URL/api/qualityprofiles/set_default"
 
 CUSTOM_PROFILE_JAVA="Sonar%20way%20(extended)"
 FILE_JAVA="/java_profile.xml"
+CUSTOM_PROFILE_TYPESCRIPT="Sonar%20way%20(extended)"
+FILE_TYPESCRIPT="/typescript_profile.xml"
+CUSTOM_PROFILE_CSS="Sonar%20way%20(extended)"
+FILE_CSS="/css_profile.xml"
 
 # INSTALL CURL
 apk --no-cache add curl
@@ -26,5 +30,21 @@ curl -X POST -u "$SONAR_USER":"$SONAR_PASSWORD" "$SONAR_RESTORE_PROFILE_URL" --f
 
 echo "Setting the profile as default..."
 curl -u admin:admin -d "language=java&qualityProfile=$CUSTOM_PROFILE_JAVA" -X POST "$SONAR_DEFAULT_PROFILE_URL"
+
+# PROFILE - TYPESCRIPT
+echo "Importing custom profile ($FILE_TYPESCRIPT)..."
+
+curl -X POST -u "$SONAR_USER":"$SONAR_PASSWORD" "$SONAR_RESTORE_PROFILE_URL" --form backup=@$FILE_TYPESCRIPT
+
+echo "Setting the profile as default..."
+curl -u admin:admin -d "language=ts&qualityProfile=$CUSTOM_PROFILE_TYPESCRIPT" -X POST "$SONAR_DEFAULT_PROFILE_URL"
+
+# PROFILE - CSS
+echo "Importing custom profile ($FILE_CSS)..."
+
+curl -X POST -u "$SONAR_USER":"$SONAR_PASSWORD" "$SONAR_RESTORE_PROFILE_URL" --form backup=@$FILE_CSS
+
+echo "Setting the profile as default..."
+curl -u admin:admin -d "language=css&qualityProfile=$CUSTOM_PROFILE_CSS" -X POST "$SONAR_DEFAULT_PROFILE_URL"
 
 echo "Data import done."

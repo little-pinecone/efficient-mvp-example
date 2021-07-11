@@ -24,6 +24,8 @@ services:
     volumes:
       - ./sonarqube/import_data.sh:/docker-entrypoint.sh:ro
       - ./sonarqube/java_profile.xml:/java_profile.xml:ro
+      - ./sonarqube/typescript_profile.xml:/typescript_profile.xml:ro
+      - ./sonarqube/css_profile.xml:/css_profile.xml:ro
     networks:
       - internal
   ### END CODE ANALYSIS ###

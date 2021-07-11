@@ -11,5 +11,5 @@ scrape_configs:
           env: staging
     # only on dev environment!
     basic_auth:
-      username: admin
-      password: admin
+      username: spring
+      password: spring
