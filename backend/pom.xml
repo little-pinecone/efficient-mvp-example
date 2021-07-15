@@ -221,19 +221,6 @@
 			<build>
 				<plugins>
 					<plugin>
-						<!--https://maven.apache.org/plugins/maven-clean-plugin/examples/delete_additional_files.html-->
-						<artifactId>maven-clean-plugin</artifactId>
-						<version>${maven.clean.version}</version>
-						<configuration>
-							<filesets>
-								<fileset>
-									<directory>${project.build.directory}/../../frontend/src/main/angular/src/backend</directory>
-									<followSymlinks>false</followSymlinks>
-								</fileset>
-							</filesets>
-						</configuration>
-					</plugin>
-					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>build-helper-maven-plugin</artifactId>
 						<executions>
@@ -276,6 +263,19 @@
 							<arguments>
 								<argument>--server.port=${tomcat.http.port}</argument>
 							</arguments>
+						</configuration>
+					</plugin>
+					<plugin>
+						<!--https://maven.apache.org/plugins/maven-clean-plugin/examples/delete_additional_files.html-->
+						<artifactId>maven-clean-plugin</artifactId>
+						<version>${maven.clean.version}</version>
+						<configuration>
+							<filesets>
+								<fileset>
+									<directory>../frontend/src/main/angular/src/backend</directory>
+									<followSymlinks>false</followSymlinks>
+								</fileset>
+							</filesets>
 						</configuration>
 					</plugin>
 					<plugin>
