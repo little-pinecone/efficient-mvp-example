@@ -158,6 +158,7 @@
 							<artifactId>spring-boot-configuration-processor</artifactId>
 						</exclude>
 					</excludes>
+					<skip>false</skip>
 				</configuration>
 			</plugin>
 			<plugin>

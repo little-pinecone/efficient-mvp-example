@@ -26,6 +26,18 @@
 		<sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
 	</properties>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
     <profiles>
         <profile>
             <id>sonar-cloud</id>
