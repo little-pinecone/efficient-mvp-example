@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import {ApiModule, BASE_PATH} from "../backend";
 import {HttpClientModule} from "@angular/common/http";
 import {environment} from "../environments/environment";
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
