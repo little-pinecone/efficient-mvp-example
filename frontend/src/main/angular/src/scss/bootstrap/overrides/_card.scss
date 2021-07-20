@@ -1,0 +1,5 @@
+@import "../basics.scss";
+
+.card {
+  border: $card-border-width dashed $card-border-color;
+}
