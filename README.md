@@ -21,7 +21,7 @@
 This is an example project for presenting efficient MVP design.
 You can find posts related to the tools and techniques used in this project on [keepgrowing.in](https://keepgrowing.in/?s=efficient-mvp-example).
 
-## Getting started
+## :jigsaw: Getting started
 First, [clone](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) this repository.
 
 Then, build it locally with:
@@ -32,11 +32,11 @@ mvn clean install
 
 In order to run the application visit the [Setting up a local environment](https://github.com/little-pinecone/efficient-mvp-example/wiki/Setting-up-a-local-environment) page on Wiki to learn how to start all required dependencies.
 
-## Resources
+## :books: Resources
 
 * [Wiki](https://github.com/little-pinecone/efficient-mvp-example/wiki) – the project documentation.
 
-## Features
+## :sparkles: Features
 
 * This is a [multi-module application that can be built with Maven as one project](https://keepgrowing.in/java/springboot/integrate-angular-with-a-spring-boot-project/).
 * The local environment is fully dockerized. You won't need to install any dependencies on your machine if you already use [Docker Compose](https://docs.docker.com/compose/).
