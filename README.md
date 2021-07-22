@@ -38,12 +38,14 @@ In order to run the application visit the [Setting up a local environment](https
 
 ## :sparkles: Features
 
-* This is a [multi-module application that can be built with Maven as one project](https://keepgrowing.in/java/springboot/integrate-angular-with-a-spring-boot-project/).
-* The local environment is fully dockerized. You won't need to install any dependencies on your machine if you already use [Docker Compose](https://docs.docker.com/compose/).
-* Integration tests are run with [Testcontainers](https://www.testcontainers.org/).
-* You'll find here a [dockerized PostgreSQL database](https://keepgrowing.in/tools/set-up-a-postgresql-database-with-docker/) that works with the application wihtout any additional configuration. The included migrations are executed against the database on the application start up.
-* The database can be [automatically populated with fake data](https://keepgrowing.in/tools/how-i-enhanced-my-project-by-generating-custom-fake-data-with-dummy4j/).
-* You can test the endpoints exposed by the API with Swagger UI and use the provided [OpenAPI 3 specification](https://keepgrowing.in/java/springboot/easy-openapi-3-specification-for-your-spring-boot-api/).
-* The monitoring stack with [Prometheus, Grafana](https://keepgrowing.in/tools/how-to-set-up-grafana-with-docker-and-connect-it-to-prometheus/) and Loki is dockerized and ready to use.
-* The [client code is automatically generated](https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/) and available for the Angular application.
-* The fronted module has [Bootstrapv 5+ and ng-bootstrap](https://keepgrowing.in/angular/how-to-add-bootstrap-to-your-angular-project-with-ng-bootstrap/) already installed and configured.
+* [Spring Boot and Angular in one jar](https://keepgrowing.in/java/springboot/integrate-angular-with-a-spring-boot-project/).
+* [Dockerized](https://docs.docker.com/compose/) local environment.
+* [Testcontainers](https://www.testcontainers.org/) for integration tests.
+* [PostgreSQL database](https://keepgrowing.in/tools/set-up-a-postgresql-database-with-docker/).
+* [Flyway migrations](https://keepgrowing.in/java/springboot/add-flyway-migrations-to-your-spring-boot-project/).
+* [Auto-generated fake data](https://keepgrowing.in/tools/how-i-enhanced-my-project-by-generating-custom-fake-data-with-dummy4j/).
+* [Swagger UI and OpenAPI 3 specification](https://keepgrowing.in/java/springboot/easy-openapi-3-specification-for-your-spring-boot-api/).
+* Monitoring with [Prometheus and Grafana](https://keepgrowing.in/tools/how-to-set-up-grafana-with-docker-and-connect-it-to-prometheus/).
+* Logs in Loki.
+* [Automatic Angular client code generation](https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/).
+* [Bootstrap v5+ and ng-bootstrap](https://keepgrowing.in/angular/how-to-add-bootstrap-to-your-angular-project-with-ng-bootstrap/).
