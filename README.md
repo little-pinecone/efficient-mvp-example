@@ -34,4 +34,15 @@ In order to run the application visit the [Setting up a local environment](https
 
 # Resources
 
-* [Wiki](https://github.com/little-pinecone/efficient-mvp-example/wiki)
+* [Wiki](https://github.com/little-pinecone/efficient-mvp-example/wiki) – the project documentation.
+
+# Features
+
+* This is a [multi-module application that can be built with Maven as one project](https://keepgrowing.in/java/springboot/integrate-angular-with-a-spring-boot-project/).
+* The local environment is fully dockerized. You won't need to install any dependencies on your machine if you already use [Docker Compose](https://docs.docker.com/compose/).
+* Integration tests are run with [Testcontainers](https://www.testcontainers.org/).
+* You'll find here a [dockerized PostgreSQL database](https://keepgrowing.in/tools/set-up-a-postgresql-database-with-docker/) that works with the application wihtout any additional configuration. The included migrations are executed against the database on the application start up.
+* The database can be [automatically populated with fake data](https://keepgrowing.in/tools/how-i-enhanced-my-project-by-generating-custom-fake-data-with-dummy4j/).
+* You can test the endpoints exposed by the API with Swagger UI and use the provided [OpenAPI 3 specification](https://keepgrowing.in/java/springboot/easy-openapi-3-specification-for-your-spring-boot-api/).
+* The [client code is automatically generated](https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/) and available for the `frontend` appliation.
+* The fronted module has [Bootstrapv 5+ and ng-bootstrap](https://keepgrowing.in/angular/how-to-add-bootstrap-to-your-angular-project-with-ng-bootstrap/) already installed and configured.
