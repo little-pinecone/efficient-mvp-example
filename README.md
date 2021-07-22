@@ -38,14 +38,14 @@ In order to run the application visit the [Setting up a local environment](https
 
 ## :sparkles: Features
 
-* [Spring Boot and Angular in one jar](https://keepgrowing.in/java/springboot/integrate-angular-with-a-spring-boot-project/).
-* [Dockerized](https://docs.docker.com/compose/) local environment.
-* [Testcontainers](https://www.testcontainers.org/) for integration tests.
-* [PostgreSQL database](https://keepgrowing.in/tools/set-up-a-postgresql-database-with-docker/).
-* [Flyway migrations](https://keepgrowing.in/java/springboot/add-flyway-migrations-to-your-spring-boot-project/).
-* [Auto-generated fake data](https://keepgrowing.in/tools/how-i-enhanced-my-project-by-generating-custom-fake-data-with-dummy4j/).
-* [Swagger UI and OpenAPI 3 specification](https://keepgrowing.in/java/springboot/easy-openapi-3-specification-for-your-spring-boot-api/).
-* Monitoring with [Prometheus and Grafana](https://keepgrowing.in/tools/how-to-set-up-grafana-with-docker-and-connect-it-to-prometheus/).
-* Logs in Loki.
-* [Automatic Angular client code generation](https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/).
-* [Bootstrap v5+ and ng-bootstrap](https://keepgrowing.in/angular/how-to-add-bootstrap-to-your-angular-project-with-ng-bootstrap/).
+* [Spring Boot and Angular in one jar](https://keepgrowing.in/java/springboot/integrate-angular-with-a-spring-boot-project/)
+* [Dockerized local environment](https://docs.docker.com/compose/)
+* [Testcontainers for integration tests](https://www.testcontainers.org/)
+* [PostgreSQL database](https://keepgrowing.in/tools/set-up-a-postgresql-database-with-docker/)
+* [Flyway migrations](https://keepgrowing.in/java/springboot/add-flyway-migrations-to-your-spring-boot-project/)
+* [Auto-generated fake data](https://keepgrowing.in/tools/how-i-enhanced-my-project-by-generating-custom-fake-data-with-dummy4j/)
+* [Swagger UI and OpenAPI 3 specification](https://keepgrowing.in/java/springboot/easy-openapi-3-specification-for-your-spring-boot-api/)
+* [Monitoring with Prometheus and Grafana](https://keepgrowing.in/tools/how-to-set-up-grafana-with-docker-and-connect-it-to-prometheus/)
+* [Log aggregation with Grafana Loki](https://grafana.com/oss/loki/)
+* [Automatic Angular client code generation](https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/)
+* [Bootstrap v5+ and ng-bootstrap](https://keepgrowing.in/angular/how-to-add-bootstrap-to-your-angular-project-with-ng-bootstrap/)
