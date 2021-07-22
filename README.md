@@ -44,5 +44,6 @@ In order to run the application visit the [Setting up a local environment](https
 * You'll find here a [dockerized PostgreSQL database](https://keepgrowing.in/tools/set-up-a-postgresql-database-with-docker/) that works with the application wihtout any additional configuration. The included migrations are executed against the database on the application start up.
 * The database can be [automatically populated with fake data](https://keepgrowing.in/tools/how-i-enhanced-my-project-by-generating-custom-fake-data-with-dummy4j/).
 * You can test the endpoints exposed by the API with Swagger UI and use the provided [OpenAPI 3 specification](https://keepgrowing.in/java/springboot/easy-openapi-3-specification-for-your-spring-boot-api/).
-* The [client code is automatically generated](https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/) and available for the `frontend` appliation.
+* The monitoring stack with [Prometheus, Grafana](https://keepgrowing.in/tools/how-to-set-up-grafana-with-docker-and-connect-it-to-prometheus/) and Loki is dockerized and ready to use.
+* The [client code is automatically generated](https://codesoapbox.dev/generate-client-code-from-spring-boot-using-maven/) and available for the Angular application.
 * The fronted module has [Bootstrapv 5+ and ng-bootstrap](https://keepgrowing.in/angular/how-to-add-bootstrap-to-your-angular-project-with-ng-bootstrap/) already installed and configured.
