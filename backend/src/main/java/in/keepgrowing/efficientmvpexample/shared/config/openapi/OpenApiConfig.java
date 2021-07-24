@@ -22,6 +22,8 @@ import java.util.Collections;
 public class OpenApiConfig {
 
     private static final String CODE_GENERATION_PROFILE = "angular";
+    private static final String SCHEME_NAME = "basicAuth";
+    private static final String SCHEME = "basic";
 
     private final Environment environment;
 
@@ -35,17 +37,7 @@ public class OpenApiConfig {
             openApi.setServers(Collections.singletonList(server));
         }
 
-        final String securitySchemeName = "basicAuth";
-        openApi.addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
-                .components(
-                        new Components()
-                                .addSecuritySchemes(securitySchemeName,
-                                        new SecurityScheme()
-                                                .name(securitySchemeName)
-                                                .type(SecurityScheme.Type.HTTP)
-                                                .scheme("basic")
-                                )
-                );
+        addSecurityItem(openApi);
 
         return openApi;
     }
@@ -67,5 +59,28 @@ public class OpenApiConfig {
         var server = new Server();
         server.setUrl("http://localhost:8080");
         return server;
+    }
+
+    private void addSecurityItem(OpenAPI openApi) {
+        var securityItem = new SecurityRequirement().addList(SCHEME_NAME);
+        var components = createComponents();
+
+        openApi
+                .addSecurityItem(securityItem)
+                .components(components);
+    }
+
+    private Components createComponents() {
+        var components = new Components();
+        components.addSecuritySchemes(SCHEME_NAME, createSecurityScheme());
+
+        return components;
+    }
+
+    private SecurityScheme createSecurityScheme() {
+        return new SecurityScheme()
+                .name(SCHEME_NAME)
+                .type(SecurityScheme.Type.HTTP)
+                .scheme(SCHEME);
     }
 }
