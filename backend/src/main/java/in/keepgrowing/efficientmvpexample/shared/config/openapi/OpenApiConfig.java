@@ -46,7 +46,8 @@ public class OpenApiConfig {
         return new Info()
                 .title(properties.getProjectTitle())
                 .description(properties.getProjectDescription())
-                .version(properties.getProjectVersion()).license(getLicense());
+                .version(properties.getProjectVersion())
+                .license(getLicense());
     }
 
     private License getLicense() {

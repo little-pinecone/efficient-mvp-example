@@ -16,6 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/swagger-ui/**",
             "/swagger-ui.html",
     };
+    private static final String[] API_ENDPOINTS = {"/api/**"};
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -27,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(API_WHITELIST).permitAll()
                 .antMatchers(SWAGGER_WHITELIST).permitAll()
-                .anyRequest().authenticated()
+                .antMatchers(API_ENDPOINTS).authenticated()
                 .and()
                 .httpBasic();
     }
