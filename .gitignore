@@ -35,3 +35,5 @@ build/
 ### Custom ###
 schema.sql
 run-sonar.sh
+start-dev.sh
+stop-dev.sh
