@@ -100,6 +100,13 @@ export class BooksService {
 
         let headers = this.defaultHeaders;
 
+        let credential: string | undefined;
+        // authentication (basicAuth) required
+        credential = this.configuration.lookupCredential('basicAuth');
+        if (credential) {
+            headers = headers.set('Authorization', 'Basic ' + credential);
+        }
+
         let httpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
         if (httpHeaderAcceptSelected === undefined) {
             // to determine the Accept header
@@ -113,14 +120,14 @@ export class BooksService {
         }
 
 
-        let responseType: 'text' | 'json' = 'json';
+        let responseType_: 'text' | 'json' = 'json';
         if(httpHeaderAcceptSelected && httpHeaderAcceptSelected.startsWith('text')) {
-            responseType = 'text';
+            responseType_ = 'text';
         }
 
         return this.httpClient.get<Book>(`${this.configuration.basePath}/api/books/${encodeURIComponent(String(bookId))}`,
             {
-                responseType: <any>responseType,
+                responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
                 observe: observe,
