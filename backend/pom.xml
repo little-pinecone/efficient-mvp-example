@@ -17,7 +17,7 @@
 		<sonar.projectKey>little-pinecone_efficient-mvp-example-backend</sonar.projectKey>
 		<sonar.projectName>Efficient MVP example (backend)</sonar.projectName>
 		<modelmapper.version>2.4.1</modelmapper.version>
-		<springdoc.version>1.5.9</springdoc.version>
+		<springdoc.version>1.5.10</springdoc.version>
 		<dummy4j.version>0.7.3</dummy4j.version>
 		<testcontainers.version>1.15.3</testcontainers.version>
 		<openapi-generator.version>5.2.0</openapi-generator.version>
