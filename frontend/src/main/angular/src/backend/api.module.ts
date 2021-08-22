@@ -2,8 +2,8 @@ import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core
 import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
-import { BooksService } from './api/books.service';
-import { HomePageService } from './api/homePage.service';
+import { BooksClient } from './api/books.client';
+import { HomePageClient } from './api/homePage.client';
 
 @NgModule({
   imports:      [],

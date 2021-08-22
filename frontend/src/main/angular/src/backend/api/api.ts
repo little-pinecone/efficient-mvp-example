@@ -1,5 +1,5 @@
-export * from './books.service';
-import { BooksService } from './books.service';
-export * from './homePage.service';
-import { HomePageService } from './homePage.service';
-export const APIS = [BooksService, HomePageService];
+export * from './books.client';
+import { BooksClient } from './books.client';
+export * from './homePage.client';
+import { HomePageClient } from './homePage.client';
+export const APIS = [BooksClient, HomePageClient];

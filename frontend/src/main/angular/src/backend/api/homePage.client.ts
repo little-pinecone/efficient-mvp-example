@@ -27,7 +27,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class HomePageService {
+export class HomePageClient {
 
     protected basePath = 'http://localhost:8080';
     public defaultHeaders = new HttpHeaders();

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Home, HomePageService} from "../../../backend";
+import {Home, HomePageClient} from "../../../backend";
 
 @Component({
   selector: 'app-home-page',
@@ -10,11 +10,11 @@ export class HomePageComponent implements OnInit {
 
   homeContent?: Home;
 
-  constructor(private readonly homePageService: HomePageService) {
+  constructor(private readonly homePageClient: HomePageClient) {
   }
 
   ngOnInit(): void {
-    this.homePageService.getHomePageData().subscribe(d => this.homeContent = d);
+    this.homePageClient.getHomePageData().subscribe(d => this.homeContent = d);
   }
 
 }

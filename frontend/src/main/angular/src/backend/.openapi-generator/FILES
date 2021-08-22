@@ -3,8 +3,8 @@
 README.md
 api.module.ts
 api/api.ts
-api/books.service.ts
-api/homePage.service.ts
+api/books.client.ts
+api/homePage.client.ts
 configuration.ts
 encoder.ts
 git_push.sh
