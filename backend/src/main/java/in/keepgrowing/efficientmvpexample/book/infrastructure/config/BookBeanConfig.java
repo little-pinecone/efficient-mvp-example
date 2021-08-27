@@ -1,9 +1,10 @@
 package in.keepgrowing.efficientmvpexample.book.infrastructure.config;
 
-import in.keepgrowing.efficientmvpexample.book.presentation.viewmodel.BookDtoMapper;
-import in.keepgrowing.efficientmvpexample.book.infrastructure.repositories.BookJpaRepository;
 import in.keepgrowing.efficientmvpexample.book.domain.repositories.BookRepository;
+import in.keepgrowing.efficientmvpexample.book.infrastructure.init.BookGenerator;
+import in.keepgrowing.efficientmvpexample.book.infrastructure.repositories.BookJpaRepository;
 import in.keepgrowing.efficientmvpexample.book.infrastructure.repositories.BookSpringRepository;
+import in.keepgrowing.efficientmvpexample.book.presentation.viewmodel.BookDtoMapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,5 +26,10 @@ public class BookBeanConfig {
     @Bean
     public BookDtoMapper bookDtoMapper() {
         return new BookDtoMapper(modelMapper);
+    }
+
+    @Bean
+    public BookGenerator bookGenerator() {
+        return new BookGenerator();
     }
 }
