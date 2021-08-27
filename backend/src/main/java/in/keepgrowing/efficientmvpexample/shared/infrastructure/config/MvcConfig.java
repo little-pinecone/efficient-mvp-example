@@ -1,4 +1,4 @@
-package in.keepgrowing.efficientmvpexample.shared.config;
+package in.keepgrowing.efficientmvpexample.shared.infrastructure.config;
 
 import lombok.NonNull;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package in.keepgrowing.efficientmvpexample.shared.config;
+package in.keepgrowing.efficientmvpexample.shared.infrastructure.config;
 
 import in.keepgrowing.efficientmvpexample.book.init.BookGenerator;
 import org.modelmapper.ModelMapper;

@@ -1,4 +1,4 @@
-package in.keepgrowing.efficientmvpexample.shared.config.openapi;
+package in.keepgrowing.efficientmvpexample.shared.infrastructure.config.openapi;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.models.Components;
