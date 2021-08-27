@@ -1,4 +1,4 @@
-package in.keepgrowing.efficientmvpexample.datainit.services;
+package in.keepgrowing.efficientmvpexample.datainit.infrastructure.services;
 
 import dev.codesoapbox.dummy4j.Dummy4j;
 

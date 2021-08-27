@@ -1,6 +1,6 @@
 package in.keepgrowing.efficientmvpexample.datainit.presentation.controllers;
 
-import in.keepgrowing.efficientmvpexample.datainit.services.DataInitializer;
+import in.keepgrowing.efficientmvpexample.datainit.infrastructure.services.DataInitializer;
 import in.keepgrowing.efficientmvpexample.shared.presentation.controllers.ApiControllerPaths;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

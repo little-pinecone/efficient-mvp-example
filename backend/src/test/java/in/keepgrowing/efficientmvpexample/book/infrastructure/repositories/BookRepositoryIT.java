@@ -3,7 +3,7 @@ package in.keepgrowing.efficientmvpexample.book.infrastructure.repositories;
 import in.keepgrowing.efficientmvpexample.book.domain.repositories.BookRepository;
 import in.keepgrowing.efficientmvpexample.book.infrastructure.init.BookGenerator;
 import in.keepgrowing.efficientmvpexample.containers.PostgresContainerWrapper;
-import in.keepgrowing.efficientmvpexample.datainit.services.CustomDummy;
+import in.keepgrowing.efficientmvpexample.datainit.infrastructure.services.CustomDummy;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

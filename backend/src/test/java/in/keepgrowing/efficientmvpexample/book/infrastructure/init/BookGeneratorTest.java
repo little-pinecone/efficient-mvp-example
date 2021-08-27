@@ -1,6 +1,6 @@
 package in.keepgrowing.efficientmvpexample.book.infrastructure.init;
 
-import in.keepgrowing.efficientmvpexample.datainit.services.CustomDummy;
+import in.keepgrowing.efficientmvpexample.datainit.infrastructure.services.CustomDummy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

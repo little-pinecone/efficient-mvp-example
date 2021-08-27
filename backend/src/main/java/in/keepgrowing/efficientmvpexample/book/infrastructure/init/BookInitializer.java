@@ -1,7 +1,7 @@
 package in.keepgrowing.efficientmvpexample.book.infrastructure.init;
 
 import in.keepgrowing.efficientmvpexample.book.domain.repositories.BookRepository;
-import in.keepgrowing.efficientmvpexample.datainit.services.CustomDummy;
+import in.keepgrowing.efficientmvpexample.datainit.infrastructure.services.CustomDummy;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

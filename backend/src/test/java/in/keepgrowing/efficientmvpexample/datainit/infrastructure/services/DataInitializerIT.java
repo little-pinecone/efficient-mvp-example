@@ -1,4 +1,4 @@
-package in.keepgrowing.efficientmvpexample.datainit.services;
+package in.keepgrowing.efficientmvpexample.datainit.infrastructure.services;
 
 import in.keepgrowing.efficientmvpexample.book.domain.repositories.BookRepository;
 import in.keepgrowing.efficientmvpexample.containers.PostgresContainerWrapper;

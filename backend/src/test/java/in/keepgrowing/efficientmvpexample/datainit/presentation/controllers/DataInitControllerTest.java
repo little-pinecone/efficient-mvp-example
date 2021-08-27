@@ -1,7 +1,7 @@
 package in.keepgrowing.efficientmvpexample.datainit.presentation.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import in.keepgrowing.efficientmvpexample.datainit.services.DataInitializer;
+import in.keepgrowing.efficientmvpexample.datainit.infrastructure.services.DataInitializer;
 import in.keepgrowing.efficientmvpexample.shared.presentation.controllers.ApiControllerPaths;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
