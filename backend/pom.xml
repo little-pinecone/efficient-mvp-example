@@ -24,7 +24,21 @@
         Wait for the release for 5.3.0: https://github.com/OpenAPITools/openapi-generator/milestone/38 -->
         <openapi-generator.version>5.2.0</openapi-generator.version>
         <maven.clean.version>3.1.0</maven.clean.version>
+        <keycloak.spring.starter.version>15.0.2</keycloak.spring.starter.version>
     </properties>
+
+    <!--https://www.keycloak.org/docs/latest/securing_apps/#_spring_boot_adapter-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.keycloak.bom</groupId>
+                <artifactId>keycloak-adapter-bom</artifactId>
+                <version>${keycloak.spring.starter.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -46,6 +60,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-spring-boot-starter</artifactId>
         </dependency>
         <!-- END Security -->
 

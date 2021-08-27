@@ -6,8 +6,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
-@Profile("dev")
-@Configuration
+//@Profile("dev")
+//@Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final String[] API_WHITELIST = {"/api/home"};
