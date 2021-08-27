@@ -1,6 +1,7 @@
-package in.keepgrowing.efficientmvpexample.book.repositories;
+package in.keepgrowing.efficientmvpexample.book.infrastructure.repositories;
 
-import in.keepgrowing.efficientmvpexample.book.init.BookGenerator;
+import in.keepgrowing.efficientmvpexample.book.domain.repositories.BookRepository;
+import in.keepgrowing.efficientmvpexample.book.infrastructure.init.BookGenerator;
 import in.keepgrowing.efficientmvpexample.containers.PostgresContainerWrapper;
 import in.keepgrowing.efficientmvpexample.datainit.services.CustomDummy;
 import org.junit.jupiter.api.AfterEach;

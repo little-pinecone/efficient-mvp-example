@@ -1,6 +1,6 @@
-package in.keepgrowing.efficientmvpexample.book.repositories;
+package in.keepgrowing.efficientmvpexample.book.infrastructure.repositories;
 
-import in.keepgrowing.efficientmvpexample.book.model.Book;
+import in.keepgrowing.efficientmvpexample.book.domain.model.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

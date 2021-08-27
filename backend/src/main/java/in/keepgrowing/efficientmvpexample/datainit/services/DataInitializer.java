@@ -1,6 +1,6 @@
 package in.keepgrowing.efficientmvpexample.datainit.services;
 
-import in.keepgrowing.efficientmvpexample.book.init.BookInitializer;
+import in.keepgrowing.efficientmvpexample.book.infrastructure.init.BookInitializer;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

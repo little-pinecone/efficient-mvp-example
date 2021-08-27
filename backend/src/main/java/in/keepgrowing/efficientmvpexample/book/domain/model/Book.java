@@ -1,4 +1,4 @@
-package in.keepgrowing.efficientmvpexample.book.model;
+package in.keepgrowing.efficientmvpexample.book.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,13 +1,13 @@
 package in.keepgrowing.efficientmvpexample.book.presentation.viewmodel;
 
-import in.keepgrowing.efficientmvpexample.book.model.Book;
+import in.keepgrowing.efficientmvpexample.book.domain.model.Book;
 import org.modelmapper.ModelMapper;
 
-public class BookDtoConverter {
+public class BookDtoMapper {
 
     private final ModelMapper modelMapper;
 
-    public BookDtoConverter(ModelMapper modelMapper) {
+    public BookDtoMapper(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
     }
 

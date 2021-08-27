@@ -1,8 +1,8 @@
 package in.keepgrowing.efficientmvpexample.book.presentation.controllers;
 
 import in.keepgrowing.efficientmvpexample.book.presentation.viewmodel.BookDto;
-import in.keepgrowing.efficientmvpexample.book.presentation.viewmodel.BookDtoConverter;
-import in.keepgrowing.efficientmvpexample.book.repositories.BookRepository;
+import in.keepgrowing.efficientmvpexample.book.presentation.viewmodel.BookDtoMapper;
+import in.keepgrowing.efficientmvpexample.book.domain.repositories.BookRepository;
 import in.keepgrowing.efficientmvpexample.shared.presentation.controllers.ApiControllerPaths;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -21,18 +21,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 
     private final BookRepository bookRepository;
-    private final BookDtoConverter bookDtoConverter;
+    private final BookDtoMapper bookDtoMapper;
 
-    public BookController(BookRepository bookRepository, BookDtoConverter bookDtoConverter) {
+    public BookController(BookRepository bookRepository, BookDtoMapper bookDtoMapper) {
         this.bookRepository = bookRepository;
-        this.bookDtoConverter = bookDtoConverter;
+        this.bookDtoMapper = bookDtoMapper;
     }
 
     @GetMapping("{bookId}")
     @Operation(summary = "Find book by id")
     public ResponseEntity<BookDto> findById(@PathVariable Long bookId) {
         return bookRepository.findById(bookId)
-                .map(bookDtoConverter::toDto)
+                .map(bookDtoMapper::toDto)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }

@@ -1,4 +1,4 @@
-package in.keepgrowing.efficientmvpexample.book.init;
+package in.keepgrowing.efficientmvpexample.book.infrastructure.init;
 
 import in.keepgrowing.efficientmvpexample.datainit.services.CustomDummy;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,6 +1,6 @@
-package in.keepgrowing.efficientmvpexample.book.init;
+package in.keepgrowing.efficientmvpexample.book.infrastructure.init;
 
-import in.keepgrowing.efficientmvpexample.book.model.Book;
+import in.keepgrowing.efficientmvpexample.book.domain.model.Book;
 import in.keepgrowing.efficientmvpexample.datainit.services.CustomDummy;
 
 public class BookGenerator {

@@ -2,9 +2,9 @@ package in.keepgrowing.efficientmvpexample.book.presentation.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import in.keepgrowing.efficientmvpexample.shared.presentation.controllers.ApiControllerPaths;
-import in.keepgrowing.efficientmvpexample.book.repositories.BookRepository;
-import in.keepgrowing.efficientmvpexample.book.presentation.viewmodel.BookDtoConverter;
-import in.keepgrowing.efficientmvpexample.book.model.Book;
+import in.keepgrowing.efficientmvpexample.book.domain.repositories.BookRepository;
+import in.keepgrowing.efficientmvpexample.book.presentation.viewmodel.BookDtoMapper;
+import in.keepgrowing.efficientmvpexample.book.domain.model.Book;
 import in.keepgrowing.efficientmvpexample.book.presentation.viewmodel.BookDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +43,7 @@ class BookControllerTest {
     private BookRepository bookRepository;
 
     @MockBean
-    private BookDtoConverter bookDtoConverter;
+    private BookDtoMapper bookDtoMapper;
 
     @Test
     void contextLoads() {
@@ -58,7 +58,7 @@ class BookControllerTest {
                 .thenReturn(Optional.of(book));
 
         var bookDto = new BookDto();
-        when(bookDtoConverter.toDto(book))
+        when(bookDtoMapper.toDto(book))
                 .thenReturn(bookDto);
 
         var expectedResponse = objectMapper.writeValueAsString(bookDto);

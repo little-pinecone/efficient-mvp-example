@@ -1,6 +1,6 @@
 package in.keepgrowing.efficientmvpexample.shared.infrastructure.config;
 
-import in.keepgrowing.efficientmvpexample.book.init.BookGenerator;
+import in.keepgrowing.efficientmvpexample.book.infrastructure.init.BookGenerator;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
