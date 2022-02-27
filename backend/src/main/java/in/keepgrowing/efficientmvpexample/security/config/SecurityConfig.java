@@ -1,4 +1,4 @@
-package in.keepgrowing.efficientmvpexample.shared.infrastructure.config.security;
+package in.keepgrowing.efficientmvpexample.security.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
