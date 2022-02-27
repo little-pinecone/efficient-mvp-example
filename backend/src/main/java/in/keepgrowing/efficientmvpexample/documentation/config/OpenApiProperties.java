@@ -1,4 +1,4 @@
-package in.keepgrowing.efficientmvpexample.shared.infrastructure.config.openapi;
+package in.keepgrowing.efficientmvpexample.documentation.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
