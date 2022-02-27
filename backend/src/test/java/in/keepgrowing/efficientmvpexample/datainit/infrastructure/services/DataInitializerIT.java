@@ -1,6 +1,6 @@
 package in.keepgrowing.efficientmvpexample.datainit.infrastructure.services;
 
-import in.keepgrowing.efficientmvpexample.book.domain.repositories.BookRepository;
+import in.keepgrowing.efficientmvpexample.books.domain.persistence.BookRepository;
 import in.keepgrowing.efficientmvpexample.containers.PostgresContainerWrapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
