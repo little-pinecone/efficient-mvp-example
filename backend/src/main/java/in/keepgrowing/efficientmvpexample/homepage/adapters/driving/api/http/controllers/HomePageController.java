@@ -1,7 +1,6 @@
 package in.keepgrowing.efficientmvpexample.homepage.adapters.driving.api.http.controllers;
 
 import in.keepgrowing.efficientmvpexample.homepage.adapters.driving.api.http.model.HomePageResponse;
-import in.keepgrowing.efficientmvpexample.shared.presentation.controllers.ApiControllerPaths;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = ApiControllerPaths.API + "/home", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "home", produces = MediaType.APPLICATION_JSON_VALUE)
 @Tag(name = "Home page")
 public class HomePageController {
 

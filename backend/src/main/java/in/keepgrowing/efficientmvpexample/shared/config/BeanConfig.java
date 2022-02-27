@@ -1,4 +1,4 @@
-package in.keepgrowing.efficientmvpexample.shared.infrastructure.config;
+package in.keepgrowing.efficientmvpexample.shared.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

@@ -1,11 +1,11 @@
 package in.keepgrowing.efficientmvpexample.books.adapters.driving.api.http.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import in.keepgrowing.efficientmvpexample.shared.presentation.controllers.ApiControllerPaths;
-import in.keepgrowing.efficientmvpexample.books.domain.persistence.BookRepository;
 import in.keepgrowing.efficientmvpexample.books.adapters.driving.api.http.model.responses.BookDtoMapper;
-import in.keepgrowing.efficientmvpexample.books.domain.model.Book;
 import in.keepgrowing.efficientmvpexample.books.adapters.driving.api.http.model.responses.BookResponse;
+import in.keepgrowing.efficientmvpexample.books.domain.model.Book;
+import in.keepgrowing.efficientmvpexample.books.domain.persistence.BookRepository;
+import in.keepgrowing.efficientmvpexample.shared.config.MvcConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(value = BookController.class)
 class BookControllerTest {
 
-    private static final String PATH = "/" + ApiControllerPaths.API + BookControllerPaths.BOOKS;
+    private static final String PATH = "/" + MvcConfig.API_PREFIX + "/" + BookControllerPaths.BOOKS;
 
     @Autowired
     private MockMvc mvc;
@@ -63,8 +63,8 @@ class BookControllerTest {
 
         var expectedResponse = objectMapper.writeValueAsString(bookDto);
 
-        mvc.perform(get(PATH + "1")
-                .contentType(MediaType.APPLICATION_JSON))
+        mvc.perform(get(PATH + "/1")
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().json(expectedResponse));
     }
@@ -75,8 +75,8 @@ class BookControllerTest {
         when(bookRepository.findById(1L))
                 .thenReturn(Optional.empty());
 
-        mvc.perform(get(PATH + "1")
-                .contentType(MediaType.APPLICATION_JSON))
+        mvc.perform(get(PATH + "/1")
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
 }

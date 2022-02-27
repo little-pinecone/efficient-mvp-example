@@ -1,7 +1,6 @@
 package in.keepgrowing.efficientmvpexample.datainit.adapters.driving.api.http.controllers;
 
 import in.keepgrowing.efficientmvpexample.datainit.adapters.driven.services.DataInitializer;
-import in.keepgrowing.efficientmvpexample.shared.presentation.controllers.ApiControllerPaths;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.context.annotation.Profile;
@@ -14,8 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "Data init", description = "Initializes db with random fake data, requires the 'init' profile")
 @RestController
-@RequestMapping(value = ApiControllerPaths.API + DataInitControllerPaths.INIT,
-        produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = DataInitControllerPaths.INIT, produces = MediaType.APPLICATION_JSON_VALUE)
 @Profile("init")
 public class DataInitController {
 

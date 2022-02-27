@@ -1,9 +1,8 @@
 package in.keepgrowing.efficientmvpexample.books.adapters.driving.api.http.controllers;
 
-import in.keepgrowing.efficientmvpexample.books.adapters.driving.api.http.model.responses.BookResponse;
 import in.keepgrowing.efficientmvpexample.books.adapters.driving.api.http.model.responses.BookDtoMapper;
+import in.keepgrowing.efficientmvpexample.books.adapters.driving.api.http.model.responses.BookResponse;
 import in.keepgrowing.efficientmvpexample.books.domain.persistence.BookRepository;
-import in.keepgrowing.efficientmvpexample.shared.presentation.controllers.ApiControllerPaths;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
@@ -15,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = ApiControllerPaths.API + BookControllerPaths.BOOKS,
-        produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = BookControllerPaths.BOOKS, produces = MediaType.APPLICATION_JSON_VALUE)
 @Tag(name = "Books")
 public class BookController {
 

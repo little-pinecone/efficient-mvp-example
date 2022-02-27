@@ -2,7 +2,7 @@ package in.keepgrowing.efficientmvpexample.datainit.adapters.driving.api.http.co
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import in.keepgrowing.efficientmvpexample.datainit.adapters.driven.services.DataInitializer;
-import in.keepgrowing.efficientmvpexample.shared.presentation.controllers.ApiControllerPaths;
+import in.keepgrowing.efficientmvpexample.shared.config.MvcConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ActiveProfiles("init")
 class DataInitControllerTest {
 
-    private static final String PATH = "/" + ApiControllerPaths.API + DataInitControllerPaths.INIT;
+    private static final String PATH = "/" + MvcConfig.API_PREFIX + "/" + DataInitControllerPaths.INIT;
 
     @Autowired
     private MockMvc mvc;
@@ -52,7 +52,7 @@ class DataInitControllerTest {
         var expectedResponse = objectMapper.writeValueAsString(123L);
 
         mvc.perform(get(PATH + "?seed=123&how-many-books=10")
-                .contentType(MediaType.APPLICATION_JSON))
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().json(expectedResponse));
     }
