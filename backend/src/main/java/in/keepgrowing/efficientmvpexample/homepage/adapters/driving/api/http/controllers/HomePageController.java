@@ -1,6 +1,6 @@
-package in.keepgrowing.efficientmvpexample.homepage.presentation.controllers;
+package in.keepgrowing.efficientmvpexample.homepage.adapters.driving.api.http.controllers;
 
-import in.keepgrowing.efficientmvpexample.homepage.presentation.viewmodel.HomePageDto;
+import in.keepgrowing.efficientmvpexample.homepage.adapters.driving.api.http.model.HomePageResponse;
 import in.keepgrowing.efficientmvpexample.shared.presentation.controllers.ApiControllerPaths;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -17,8 +17,8 @@ public class HomePageController {
 
     @GetMapping
     @Operation(summary = "Returns unsecured test data from backend")
-    public ResponseEntity<HomePageDto> getHomePageData() {
-        var body = new HomePageDto("Home page body provided by the backend module");
+    public ResponseEntity<HomePageResponse> getHomePageData() {
+        var body = new HomePageResponse("Home page body provided by the backend module");
 
         return ResponseEntity.ok(body);
     }

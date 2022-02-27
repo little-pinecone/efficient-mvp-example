@@ -1,7 +1,7 @@
-package in.keepgrowing.efficientmvpexample.homepage.presentation.controllers;
+package in.keepgrowing.efficientmvpexample.homepage.adapters.driving.api.http.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import in.keepgrowing.efficientmvpexample.homepage.presentation.viewmodel.HomePageDto;
+import in.keepgrowing.efficientmvpexample.homepage.adapters.driving.api.http.model.HomePageResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -36,7 +36,7 @@ class HomePageControllerTest {
 
     @Test
     void shouldGetTestData() throws Exception {
-        var expected = new HomePageDto("Home page body provided by the backend module");
+        var expected = new HomePageResponse("Home page body provided by the backend module");
 
         mvc.perform(get("/api/home")
                 .contentType(MediaType.APPLICATION_JSON))
