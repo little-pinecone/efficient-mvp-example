@@ -1,4 +1,4 @@
-package in.keepgrowing.efficientmvpexample.datainit.infrastructure.services;
+package in.keepgrowing.efficientmvpexample.datainit.adapters.driven.services;
 
 import in.keepgrowing.efficientmvpexample.books.adapters.driven.persistence.init.BookInitializer;
 import lombok.extern.slf4j.Slf4j;

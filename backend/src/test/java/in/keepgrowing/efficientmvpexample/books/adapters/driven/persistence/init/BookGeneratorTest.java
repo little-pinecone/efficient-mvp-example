@@ -1,7 +1,6 @@
 package in.keepgrowing.efficientmvpexample.books.adapters.driven.persistence.init;
 
-import in.keepgrowing.efficientmvpexample.books.adapters.driven.persistence.init.BookGenerator;
-import in.keepgrowing.efficientmvpexample.datainit.infrastructure.services.CustomDummy;
+import in.keepgrowing.efficientmvpexample.datainit.adapters.driven.services.CustomDummy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

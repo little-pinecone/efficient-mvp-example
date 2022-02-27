@@ -1,9 +1,9 @@
-package in.keepgrowing.efficientmvpexample.datainit.infrastructure.config;
+package in.keepgrowing.efficientmvpexample.datainit.config;
 
 import in.keepgrowing.efficientmvpexample.books.adapters.driven.persistence.init.BookGenerator;
 import in.keepgrowing.efficientmvpexample.books.adapters.driven.persistence.init.BookInitializer;
 import in.keepgrowing.efficientmvpexample.books.domain.persistence.BookRepository;
-import in.keepgrowing.efficientmvpexample.datainit.infrastructure.services.DataInitializer;
+import in.keepgrowing.efficientmvpexample.datainit.adapters.driven.services.DataInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;

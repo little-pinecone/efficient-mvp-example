@@ -1,7 +1,8 @@
-package in.keepgrowing.efficientmvpexample.datainit.infrastructure.services;
+package in.keepgrowing.efficientmvpexample.datainit.adapters.driven.services;
 
 import in.keepgrowing.efficientmvpexample.books.domain.persistence.BookRepository;
 import in.keepgrowing.efficientmvpexample.containers.PostgresContainerWrapper;
+import in.keepgrowing.efficientmvpexample.datainit.adapters.driven.services.DataInitializer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
