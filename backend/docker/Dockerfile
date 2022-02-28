@@ -1,4 +1,4 @@
-FROM openjdk:13-jdk-slim
+FROM openjdk:17-jdk-slim
 RUN addgroup --system spring && adduser --system spring --ingroup spring
 RUN mkdir /var/log/efficient-mvp-example
 RUN chown spring:spring /var/log/efficient-mvp-example
