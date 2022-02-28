@@ -13,8 +13,8 @@
 
     <properties>
         <frontend.maven.plugin.version>1.12.1</frontend.maven.plugin.version>
-        <node.version>v14.17.1</node.version>
-        <npm.version>7.17.0</npm.version>
+        <node.version>v16.14.0</node.version>
+        <npm.version>8.5.2</npm.version>
 
         <sonar.projectKey>little-pinecone_efficient-mvp-example-frontend</sonar.projectKey>
         <sonar.projectName>Efficient MVP example (frontend)</sonar.projectName>
