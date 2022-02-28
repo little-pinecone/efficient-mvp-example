@@ -3,18 +3,19 @@ services:
   keycloak:
     image: jboss/keycloak:${KEYCLOAK_VERSION}
     ports:
-      - "9900:8080"
+      - "8024:8080"
     environment:
       - KEYCLOAK_USER=${KEYCLOAK_USER}
       - KEYCLOAK_PASSWORD=${KEYCLOAK_PASSWORD}
-      - KEYCLOAK_IMPORT=/tmp/realm-export.json
+      - KEYCLOAK_IMPORT=/tmp/import/keep-growing-realm.json
       - DB_DATABASE=${KEYCLOAK_DATABASE_NAME}
       - DB_USER=${KEYCLOAK_DATABASE_USER}
       - DB_PASSWORD=${KEYCLOAK_DATABASE_PASSWORD}
       - DB_ADDR=${KEYCLOAK_DATABASE_HOST}
       - DB_VENDOR=${KEYCLOAK_DATABASE_VENDOR}
     volumes:
-      - ./keycloak/realms/realm-export.json:/tmp/realm-export.json
+      - ./keycloak/realms/import/keep-growing-realm.json:/tmp/import/keep-growing-realm.json
+      - ./keycloak/realms/export:/tmp/export
       - ./keycloak/themes/custom:/opt/jboss/keycloak/themes/custom
       - ./keycloak/scripts/disable-theme-cache.cli:/opt/jboss/startup-scripts/disable-theme-cache.cli
     networks:
