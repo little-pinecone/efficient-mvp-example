@@ -17,7 +17,6 @@ services:
       - ./keycloak/realms/import/keep-growing-realm.json:/tmp/import/keep-growing-realm.json
       - ./keycloak/realms/export:/tmp/export
       - ./keycloak/themes/custom:/opt/jboss/keycloak/themes/custom
-      - ./keycloak/scripts/disable-theme-cache.cli:/opt/jboss/startup-scripts/disable-theme-cache.cli
     networks:
       internal:
     depends_on:
