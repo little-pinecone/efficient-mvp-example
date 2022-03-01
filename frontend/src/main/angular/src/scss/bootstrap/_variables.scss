@@ -1,18 +1,11 @@
-$primary: #64113f;
-$primary: #8338ec;
-$primary: #720026;
-$primary: #9e0059;
-$primary: #aa3e98;
-$primary: #c62d72;
-$primary: #d81159;
-$primary: #ff0054;
+$gray-200: #e9e9e8 !default;
+$gray-600: #6c757d !default;
 
-$off-white: #fdfffc;
-$blue: #212529;
-$orange: #ff9f1c;
+$light: $gray-200 !default;
 
-$card-cap-bg: $blue;
-$card-cap-color: $off-white;
-$link-color: $orange;
-$card-bg: $off-white;
-$card-border-color: $blue;
+$primary: #4c912d;
+$secondary: $gray-600;
+$danger: #a5001d;
+$warning: #e05604;
+$success: #00662b;
+$info: #00509d;
