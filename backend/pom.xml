@@ -60,7 +60,7 @@
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
         </dependency>
-        <!-- In memory database is used only during client code generation (profile 'angluar') -->
+        <!-- In memory database is used only during client code generation (profile 'angluar') and tests-->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
